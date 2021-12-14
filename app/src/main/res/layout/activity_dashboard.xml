@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DashboardAdminActivity">
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar01">
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:text="Dashboard Admin"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/SubtitleTv"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/titleTv"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:text=" abc@example.com"
+            android:textColor="@color/white" />
+        <ImageButton
+            android:id="@+id/logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_power_settings_new_24"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
+
+
+    </RelativeLayout>
+    <!-- Search -->
+    <EditText
+        android:id="@+id/searchEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl"
+        android:hint="Search"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:textColorHint="@color/gray01"
+        android:drawableLeft="@drawable/ic_baseline_search_24" />
+
+    <!-- Categories -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchEt"
+        tools:listitem="@layout/row_category"
+
+        android:layout_margin="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_above="@id/bottomLl"/>
+
+    <LinearLayout
+        android:id="@+id/bottomLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <!-- Add category -->
+        <Button
+            android:id="@+id/addCategoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Add Category"
+            android:layout_weight="1"
+            android:background="@drawable/shape_button01"
+            android:minHeight="50dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp" />
+
+        <!-- Add PDF-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addPdfFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            android:src="@drawable/ic_baseline_picture_as_pdf_24"
+
+            app:fabCustomSize="50dp"
+            android:backgroundTint="@color/gray02"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

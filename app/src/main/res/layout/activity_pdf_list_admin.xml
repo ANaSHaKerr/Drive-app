@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PdfListAdminActivity"
+    android:background="@drawable/back01">
+
+    <!--toolbar-->
+    <RelativeLayout
+        android:id="@+id/pdf_list_toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@drawable/shape_toolbar02">
+
+        <!--back btn-->
+        <ImageButton
+            android:id="@+id/pdf_list_back_ibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_back_white"
+            android:background="@android:color/transparent"
+            android:padding="5dp"/>
+
+        <!--title-->
+        <TextView
+            android:id="@+id/pdf_list_title_tv"
+            android:layout_width="28dp"
+            android:layout_height="34dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Books"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!--category og books-->
+        <TextView
+            android:id="@+id/pdf_list_subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pdf_list_title_tv"
+            android:layout_centerHorizontal="true"
+            android:text="category"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <!--Search-->
+    <EditText
+        android:id="@+id/pdf_list_search_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pdf_list_toolbar_rl"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_search_gray"
+        android:drawableLeft="@drawable/ic_search_gray"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:hint="Search"
+        android:textColorHint="@color/gray01"
+        android:textColor="@color/black"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pdf_list_books_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/pdf_list_search_et"
+        tools:listitem="@layout/row_pdf_admin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</RelativeLayout>

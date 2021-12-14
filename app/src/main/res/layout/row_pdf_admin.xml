@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/row_pdf_admin_view_rl"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/gray02">
+
+            <!--pdfView-->
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/row_pdf_admin_PDFView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <!--progressbar-->
+            <ProgressBar
+                android:id="@+id/PDFView_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/row_pdf_title_tv"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Title"
+            android:layout_toEndOf="@+id/row_pdf_admin_view_rl"
+            android:layout_toStartOf="@+id/row_pdf_more_iBtn"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/row_pdf_description_tv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/row_pdf_admin_view_rl"
+            android:layout_below="@id/row_pdf_title_tv"
+            android:layout_marginTop="8dp"
+            android:text="Book Description"
+            android:maxLines="4"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/row_pdf_category_tv"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="Category"
+            android:paddingRight="5dp"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/row_pdf_size_tv"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/row_pdf_admin_view_rl"
+            android:layout_alignParentBottom="true"
+            android:text="13 MB"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/row_pdf_date_tv"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/row_pdf_size_tv"
+            android:layout_toStartOf="@+id/row_pdf_category_tv"
+            android:layout_alignParentBottom="true"
+            android:text="dd/MM/yyyy"
+            android:gravity="center"
+            android:maxLines="1"/>
+
+        <ImageButton
+            android:id="@+id/row_pdf_more_iBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_more_black"
+            android:background="@android:color/transparent"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
